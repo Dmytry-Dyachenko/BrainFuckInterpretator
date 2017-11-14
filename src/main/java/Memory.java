@@ -90,7 +90,6 @@ public class Memory {
     }
 
     public void endTheLoop() {/**Go to the start of loop, if conditional is false, or go ahead if is not*/
-
         if (mainMemoryArray[index] != 0)
             this.commandNumber = loopStart.getFirst() - 1;
         loopStart.removeFirst();

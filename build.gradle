@@ -5,6 +5,11 @@ apply plugin: 'java'
 
 sourceCompatibility = 1.8
 
+task myRun(type: JavaExec) {
+    classpath sourceSets.main.runtimeClasspath
+    main = "Main"
+    args "arg1", "arg2"
+}
 repositories {
     mavenCentral()
 }
