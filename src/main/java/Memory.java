@@ -45,7 +45,15 @@ public class Memory {
     }
 
     public void implementCommands(BrainFuckCommand brainFuckCommand) {
-
+        switch (brainFuckCommand){
+            case INCREMENT: increment(); break;
+            case DECREMENT: decrement(); break;
+            case MOVECARRETLEFT: moveCaretLeft(); break;
+            case MOVECARRETRIGHT: moveCaretRight(); break;
+            case LOOPSTART: startTheLoop(); break;
+            case LOOPEND: endTheLoop(); break;
+            case OUTPUT: output(); break;
+        }
     }
 
     public void increment() {
@@ -60,7 +68,7 @@ public class Memory {
         index--;
     }
 
-    public void moveCarretRight() {
+    public void moveCaretRight() {
         index++;
     }
 

@@ -11,7 +11,7 @@ public class MainCommandsTest {
     @Test
     public void moveCaretRightTest() {
         memoryInstance.setIndex(10);
-        memoryInstance.moveCarretRight();
+        memoryInstance.moveCaretRight();
         assertEquals(11, memoryInstance.getIndex());
     }
 
