@@ -10,9 +10,9 @@ public class BrainFuckInterpretator {
         if (validator.isValid(brainFuckString)) {
             Memory memoryWorker = new Memory();
             BrainFuckCommand[] brainFuckCommands = parser.parseToCommand(brainFuckString);
-            for (BrainFuckCommand command:brainFuckCommands
-                 ) {
-                memoryWorker.implementCommands(command);
+            for (int i = 0; i<brainFuckCommands.length;i++) {
+                memoryWorker.implementCommands(brainFuckCommands[i],i);/**I give to "i" a command number, when loop is start again*/
+                i = memoryWorker.getCommandNumber();
             }
             System.out.println(memoryWorker.getOutputString());
         } else throw new Exception("Invalid string for interpretate it");

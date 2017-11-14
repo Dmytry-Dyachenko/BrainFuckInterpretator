@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="MainCommandsTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2017-11-14T15:50:39" hostname="d-dyachenko" time="0.001">
+<testsuite name="MainCommandsTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2017-11-14T17:42:07" hostname="d-dyachenko" time="0.001">
   <properties/>
   <testcase name="moveCaretRightTest" classname="MainCommandsTest" time="0.0"/>
   <testcase name="incrementTest" classname="MainCommandsTest" time="0.0"/>

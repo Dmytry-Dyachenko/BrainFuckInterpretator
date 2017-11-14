@@ -8,6 +8,15 @@ public class Memory {
     private int index = 0;
     private int[] mainMemoryArray = new int[50];
     private boolean areWeInside = false;
+    private int commandNumber = 0;
+
+    public int getCommandNumber() {
+        return commandNumber;
+    }
+
+    public void setCommandNumber(int commandNumber) {
+        this.commandNumber = commandNumber;
+    }
 
     public int[] getMainMemoryArray() {
         return mainMemoryArray;
@@ -44,15 +53,17 @@ public class Memory {
         this.index = index;
     }
 
-    public void implementCommands(BrainFuckCommand brainFuckCommand) {
+    public void implementCommands(BrainFuckCommand brainFuckCommand, int commandNumber) {
+        this.commandNumber = commandNumber;         /** The information about command number, for come back to it, if it is needed*/
         switch (brainFuckCommand){
             case INCREMENT: increment(); break;
             case DECREMENT: decrement(); break;
-            case MOVECARRETLEFT: moveCaretLeft(); break;
-            case MOVECARRETRIGHT: moveCaretRight(); break;
-            case LOOPSTART: startTheLoop(); break;
-            case LOOPEND: endTheLoop(); break;
+            case MOVE_CARET_LEFT: moveCaretLeft(); break;
+            case MOVE_CARET_RIGHT: moveCaretRight(); break;
+            case LOOP_START: startTheLoop(); break;
+            case LOOP_END: endTheLoop(); break;
             case OUTPUT: output(); break;
+
         }
     }
 
@@ -73,13 +84,14 @@ public class Memory {
     }
 
     public void startTheLoop() {
-        loopStart.addFirst(index);
+        loopStart.addFirst(commandNumber);
         areWeInside = (mainMemoryArray[index] == 0) ? true : false;
     }
 
     public void endTheLoop() {
+
         if (mainMemoryArray[index] != 0)
-            loopStart.getFirst();
+            this.commandNumber = loopStart.getFirst() - 1;
         loopStart.removeFirst();
     }
 

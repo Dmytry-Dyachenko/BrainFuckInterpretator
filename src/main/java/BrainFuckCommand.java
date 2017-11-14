@@ -5,9 +5,9 @@
 public enum BrainFuckCommand {
     INCREMENT,
     DECREMENT,
-    MOVECARRETLEFT,
-    MOVECARRETRIGHT,
-    LOOPSTART,
-    LOOPEND,
+    MOVE_CARET_LEFT,
+    MOVE_CARET_RIGHT,
+    LOOP_START,
+    LOOP_END,
     OUTPUT
 }

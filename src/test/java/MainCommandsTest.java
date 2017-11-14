@@ -12,7 +12,7 @@ public class MainCommandsTest {
     public void moveCaretRightTest() {
         memoryInstance.setIndex(10);
         memoryInstance.moveCaretRight();
-        assertEquals(11, memoryInstance.getIndex());
+        assertEquals("Caret didn`t move to right place",11,memoryInstance.getIndex());
     }
 
     @Test
