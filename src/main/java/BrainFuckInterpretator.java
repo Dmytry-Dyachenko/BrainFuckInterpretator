@@ -8,11 +8,13 @@ public class BrainFuckInterpretator {
         Validator validator = new Validator();
         Parser parser = new Parser();
         if (validator.isValid(brainFuckString)) {
+            Memory memoryWorker = new Memory();
             BrainFuckCommand[] brainFuckCommands = parser.parseToCommand(brainFuckString);
             for (BrainFuckCommand command:brainFuckCommands
                  ) {
-
+                memoryWorker.implementCommands(command);
             }
+            System.out.println(memoryWorker.getOutputString());
         } else throw new Exception("Invalid string for interpretate it");
     }
 }
