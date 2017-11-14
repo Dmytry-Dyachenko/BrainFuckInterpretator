@@ -19,7 +19,7 @@ public class MainCommandsTest {
     public void moveCaretLeftTest() {
         memoryInstance.setIndex(11);
         memoryInstance.moveCaretLeft();
-        assertEquals(10, memoryInstance.getIndex());
+        assertEquals("Caret didn`t move to right place",10, memoryInstance.getIndex());
     }
 
     @Test
@@ -28,7 +28,7 @@ public class MainCommandsTest {
         memoryInstance.setIndex(10);
         memoryInstance.setMainMemoryArray(array);
         memoryInstance.increment();
-        assertEquals(1, memoryInstance.getMainMemoryArray()[memoryInstance.getIndex()]);
+        assertEquals("Increment isn`t successful",1, memoryInstance.getMainMemoryArray()[memoryInstance.getIndex()]);
     }
 
     @Test
@@ -37,12 +37,12 @@ public class MainCommandsTest {
         memoryInstance.setIndex(10);
         memoryInstance.setMainMemoryArray(array);
         memoryInstance.decrement();
-        assertEquals(0, memoryInstance.getMainMemoryArray()[memoryInstance.getIndex()] + 1);
+        assertEquals("Decrement isn`t successful",0, memoryInstance.getMainMemoryArray()[memoryInstance.getIndex()] + 1);
     }
     @Test
     public void loopStartTest(){
         memoryInstance.setIndex(25);
         memoryInstance.startTheLoop();
-        assertEquals(false,memoryInstance.getLoopStart().isEmpty());
+        assertEquals("Start the loop isn`t saved into your deque",false,memoryInstance.getLoopStart().isEmpty());
     }
 }

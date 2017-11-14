@@ -4,10 +4,10 @@
 
 public class BrainFuckInterpretator {
 
-    public void executeString(String brainFuckString) throws Exception {
+    public void executeString(String brainFuckString) throws Exception {/**Execute string if it is possible*/
         Validator validator = new Validator();
         Parser parser = new Parser();
-        if (validator.isValid(brainFuckString)) {
+        if (validator.isValid(brainFuckString)) {/** Send the string for checking validation */
             Memory memoryWorker = new Memory();
             BrainFuckCommand[] brainFuckCommands = parser.parseToCommand(brainFuckString);
             for (int i = 0; i<brainFuckCommands.length;i++) {

@@ -53,7 +53,8 @@ public class Memory {
         this.index = index;
     }
 
-    public void implementCommands(BrainFuckCommand brainFuckCommand, int commandNumber) {
+    public void implementCommands(BrainFuckCommand brainFuckCommand, int commandNumber) { /**Took the command from the interpretator method and sent it,
+                                                                                            in dependency of conditionals, to different methods*/
         this.commandNumber = commandNumber;         /** The information about command number, for come back to it, if it is needed*/
         switch (brainFuckCommand){
             case INCREMENT: increment(); break;
@@ -67,35 +68,35 @@ public class Memory {
         }
     }
 
-    public void increment() {
+    public void increment() { /**Increment the element of array with given index*/
         mainMemoryArray[index]++;
     }
 
-    public void decrement() {
+    public void decrement() {/**Decrement the element of array with given index*/
         mainMemoryArray[index]--;
     }
 
-    public void moveCaretLeft() {
+    public void moveCaretLeft() {/**Move the pointer to the previous element of array*/
         index--;
     }
 
-    public void moveCaretRight() {
+    public void moveCaretRight() {/**Move the pointer to the next element of array*/
         index++;
     }
 
-    public void startTheLoop() {
+    public void startTheLoop() { /**Save the information about the start of the loop*/
         loopStart.addFirst(commandNumber);
         areWeInside = (mainMemoryArray[index] == 0) ? true : false;
     }
 
-    public void endTheLoop() {
+    public void endTheLoop() {/**Go to the start of loop, if conditional is false, or go ahead if is not*/
 
         if (mainMemoryArray[index] != 0)
             this.commandNumber = loopStart.getFirst() - 1;
         loopStart.removeFirst();
     }
 
-    public void output() {
+    public void output() { /**Make the output string for show it in the log*/
       outputString+=(char)mainMemoryArray[index];
     }
 }

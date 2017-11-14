@@ -2,7 +2,7 @@
  * Parse the BrainFuck string
  */
 public class Parser {
-    public BrainFuckCommand[] parseToCommand(String brainFuckString){
+    public BrainFuckCommand[] parseToCommand(String brainFuckString){ /**Parse the string and create the array of commands */
         char[] brainFuckCharackters = brainFuckString.toCharArray();
         BrainFuckCommand[] brainFuckCommands = new BrainFuckCommand[brainFuckCharackters.length];
         for (int i =0; i<brainFuckCharackters.length; i++)
