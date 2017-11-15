@@ -27,7 +27,7 @@ public class Memory {
     }
 
     /***Array, which will be used like main memory container */
-    private String outputString = new String();
+    private StringBuffer outputString = new StringBuffer();
 
     public ArrayDeque<Integer> getLoopStart() {
         return loopStart;
@@ -37,11 +37,11 @@ public class Memory {
         this.loopStart = loopStart;
     }
 
-    public String getOutputString() {
+    public StringBuffer getOutputString() {
         return outputString;
     }
 
-    public void setOutputString(String outputString) {
+    public void setOutputString(StringBuffer outputString) {
         this.outputString = outputString;
     }
 
@@ -96,6 +96,6 @@ public class Memory {
     }
 
     public void output() { /**Make the output string for show it in the log*/
-      outputString+=(char)mainMemoryArray[index];
+      outputString.append((char)mainMemoryArray[index]);
     }
 }
