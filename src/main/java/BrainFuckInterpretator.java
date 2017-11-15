@@ -4,7 +4,7 @@
 
 public class BrainFuckInterpretator {
 
-    public void executeString(String brainFuckString) throws Exception {/**Execute string if it is possible*/
+    public StringBuffer executeString(String brainFuckString) throws Exception {/**Execute string if it is possible*/
         Validator validator = new Validator();
         Parser parser = new Parser();
         if (validator.isValid(brainFuckString)) {/** Send the string for checking validation */
@@ -15,6 +15,7 @@ public class BrainFuckInterpretator {
                 i = memoryWorker.getCommandNumber();
             }
             System.out.println(memoryWorker.getOutputString());
+           return memoryWorker.getOutputString();
         } else throw new Exception("Invalid string for interpretate it");
     }
 }
